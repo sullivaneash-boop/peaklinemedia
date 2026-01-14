@@ -1,6 +1,8 @@
 import React, { useState, useMemo } from 'react';
+import { useAuth0 } from '@auth0/auth0-react'
 import type { Brand, Athlete, MatchEvaluation, Deal } from './types'
 import { calculateFitScore } from './lib/calc'
+import Auth0Guard from './components/Auth0Guard'
 import Sidebar from './components/Sidebar'
 import Header from './components/Header'
 import Dashboard from './components/Dashboard'
@@ -11,8 +13,8 @@ import DealsView from './components/DealsView'
 import BrandFormModal from './components/BrandFormModal'
 import AthleteFormModal from './components/AthleteFormModal'
 
-const App: React.FC = () => {
-  const [brands, setBrands] = useState<Brand[]>([]);
+const AppContent: React.FC = () => {
+  const { user, logout } = useAuth0()
   const [athletes, setAthletes] = useState<Athlete[]>([]);
   const [deals, setDeals] = useState<Deal[]>([]);
   const [matchEvaluations, setMatchEvaluations] = useState<MatchEvaluation[]>([]);
@@ -76,6 +78,14 @@ const App: React.FC = () => {
       <BrandFormModal show={showBrandForm} onClose={()=>setShowBrandForm(false)} brandForm={brandForm} setBrandForm={setBrandForm} handleAddBrand={handleAddBrand} />
       <AthleteFormModal show={showAthleteForm} onClose={()=>setShowAthleteForm(false)} athleteForm={athleteForm} setAthleteForm={setAthleteForm} handleAddAthlete={handleAddAthlete} />
     </div>
+  )
+}
+
+const App: React.FC = () => {
+  return (
+    <Auth0Guard>
+      <AppContent />
+    </Auth0Guard>
   )
 }
 
