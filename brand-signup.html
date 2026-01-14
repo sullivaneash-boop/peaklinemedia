@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brand Partnership - Peakline Media</title>
+  <link rel="stylesheet" href="https://use.typekit.net/ywe3ukz.css">
+  <style>
+    :root{
+      --bg: #1a1a1a;
+      --bg-elevated: #2e2e2e;
+      --text: #ffffff;
+      --text-dim: #888888;
+      --text-muted: #555555;
+      --brand: #ff8d40;
+      --brand2: #ff7420;
+      --border: rgba(255,255,255,0.04);
+    }
+
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{height:100%}
+    body{
+      min-height:100vh;
+      font-family: "owners", Arial, sans-serif;
+      background: var(--bg);
+      color:var(--text);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.5;
+      padding:40px 24px;
+    }
+
+    /* Subtle grid background */
+    body::before{
+      content:"";
+      position:fixed;
+      inset:0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.01) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.01) 1px, transparent 1px);
+      background-size:60px 60px;
+      pointer-events:none;
+      opacity:0.5;
+    }
+
+    .container{
+      max-width:720px;
+      margin:0 auto;
+      position:relative;
+    }
+
+    /* Header */
+    .header{
+      text-align:center;
+      margin-bottom:48px;
+      padding-bottom:32px;
+      border-bottom:1px solid var(--border);
+    }
+
+    .logo{
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      margin-bottom:24px;
+    }
+
+    .icon{
+      height:64px;
+      width:auto;
+      margin-bottom:16px;
+    }
+
+    .logo-text{
+      font-weight:900;
+      font-style:italic;
+      font-size:28px;
+      line-height:1;
+      color:var(--text);
+      letter-spacing:-0.01em;
+    }
+
+    .form-type{
+      font-size:13px;
+      font-weight:700;
+      letter-spacing:0.08em;
+      text-transform:uppercase;
+      color:var(--brand);
+      margin-top:12px;
+    }
+
+    /* Form intro */
+    .form-intro{
+      background:var(--bg-elevated);
+      border:1px solid var(--border);
+      border-left:3px solid var(--brand);
+      padding:24px;
+      margin-bottom:40px;
+      color:var(--text-dim);
+      font-size:15px;
+      line-height:1.6;
+    }
+
+    /* Form sections */
+    .section-title{
+      font-size:12px;
+      font-weight:700;
+      letter-spacing:0.08em;
+      text-transform:uppercase;
+      color:var(--text-muted);
+      margin:40px 0 24px 0;
+      padding-bottom:12px;
+      border-bottom:1px solid var(--border);
+    }
+
+    .section-title:first-of-type{
+      margin-top:0;
+    }
+
+    .form-group{
+      margin-bottom:24px;
+    }
+
+    label{
+      display:block;
+      color:var(--text);
+      font-weight:600;
+      margin-bottom:10px;
+      font-size:14px;
+    }
+
+    label .required{
+      color:var(--brand);
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="url"],
+    select,
+    textarea{
+      width:100%;
+      padding:14px 16px;
+      background:var(--bg-elevated);
+      border:1px solid var(--border);
+      color:var(--text);
+      font-size:15px;
+      font-family:"owners", Arial, sans-serif;
+      transition:all 0.2s ease;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus{
+      outline:none;
+      border-color:var(--brand);
+      background:var(--bg-elevated);
+    }
+
+    input::placeholder,
+    textarea::placeholder{
+      color:var(--text-muted);
+    }
+
+    select{
+      cursor:pointer;
+      appearance:none;
+      background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath fill='%23ff8d40' d='M0 0l6 8 6-8z'/%3E%3C/svg%3E");
+      background-repeat:no-repeat;
+      background-position:right 16px center;
+      padding-right:45px;
+    }
+
+    select option{
+      background:var(--bg-elevated);
+      color:var(--text);
+    }
+
+    textarea{
+      resize:vertical;
+      min-height:100px;
+    }
+
+    .form-row{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:20px;
+    }
+
+    /* Checkbox */
+    .checkbox-group{
+      margin-top:40px;
+      padding:20px;
+      background:var(--bg-elevated);
+      border:1px solid var(--border);
+    }
+
+    .checkbox-group label{
+      display:flex;
+      align-items:start;
+      font-weight:400;
+      margin-bottom:0;
+      cursor:pointer;
+      font-size:14px;
+      line-height:1.6;
+    }
+
+    .checkbox-group input[type="checkbox"]{
+      margin-right:12px;
+      margin-top:3px;
+      width:20px;
+      height:20px;
+      cursor:pointer;
+      accent-color:var(--brand);
+      flex-shrink:0;
+    }
+
+    /* Submit button */
+    button[type="submit"]{
+      width:100%;
+      background:var(--brand);
+      color:#000;
+      border:none;
+      padding:18px 32px;
+      font-size:15px;
+      font-weight:700;
+      font-style:italic;
+      font-family:"owners", Arial, sans-serif;
+      cursor:pointer;
+      transition:all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      margin-top:32px;
+      text-transform:uppercase;
+      letter-spacing:0.04em;
+    }
+
+    button[type="submit"]:hover{
+      background:var(--brand2);
+      transform:translateY(-2px);
+      box-shadow:0 8px 24px rgba(255,141,64,0.2);
+    }
+
+    button[type="submit"]:disabled{
+      background:var(--text-muted);
+      cursor:not-allowed;
+      transform:none;
+      box-shadow:none;
+    }
+
+    /* Success message */
+    .success-message{
+      display:none;
+      background:var(--bg-elevated);
+      border:1px solid rgba(76,175,80,0.3);
+      border-left:3px solid #4caf50;
+      padding:40px;
+      text-align:center;
+    }
+
+    .success-message.show{
+      display:block;
+    }
+
+    .success-message h3{
+      color:#4caf50;
+      font-size:24px;
+      font-weight:800;
+      font-style:italic;
+      margin-bottom:16px;
+    }
+
+    .success-message p{
+      font-size:16px;
+      line-height:1.6;
+      color:var(--text-dim);
+      margin-bottom:24px;
+    }
+
+    /* Button row */
+    .button-row{
+      display:flex;
+      gap:16px;
+      align-items:center;
+      margin-top:32px;
+    }
+
+    .button-row button[type="submit"]{
+      flex:1;
+      margin-top:0;
+    }
+
+    /* Back link */
+    .back-link{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      width:56px;
+      height:56px;
+      color:var(--text-dim);
+      text-decoration:none;
+      transition:all 0.2s;
+      border:1px solid var(--border);
+      flex-shrink:0;
+    }
+
+    .back-link:hover{
+      color:var(--brand);
+      border-color:var(--brand);
+    }
+
+    .back-link svg{
+      width:20px;
+      height:20px;
+    }
+
+    .success-message .back-link{
+      background:var(--brand);
+      color:#000;
+      border-color:var(--brand);
+      width:auto;
+      padding:12px 24px;
+      font-size:13px;
+      font-weight:600;
+      letter-spacing:0.04em;
+      text-transform:uppercase;
+    }
+
+    .success-message .back-link:hover{
+      background:var(--brand2);
+    }
+
+    @media(max-width:650px){
+      body{
+        padding:32px 20px;
+      }
+
+      .header{
+        margin-bottom:40px;
+      }
+
+      .form-row{
+        grid-template-columns:1fr;
+      }
+
+      .section-title{
+        font-size:11px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="logo">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" class="icon">
+          <path fill="#ff8d40" d="M118.32,116.47c2.71.22,10.13.44,16.74-4.42,5.52-4.07,7.77-9.69,9.3-13.54,1.57-3.94,2.2-7.41,2.49-9.8-16.83-19.29-33.69-38.6-50.52-57.89L10.56,128.84h10.54L96.05,42.02l20.65,22.7-18.36,22.02-10.61-11.81.04,9.99,10.54,11.87,23.77-27.01,18.58,20.08c-.44,6.76-2.69,11.2-4.06,13.41-1.75,2.86-3.27,4.05-3.97,4.55-3.1,2.23-6.46,2.45-8.06,2.45l-5.59.04,1.16-24.38-5.02,24.32-29.25-.17-15.87,18.76h8.69l10.87-12.07,24.34-.24-2.4,12.31,35.93.33-29.49-5.16.33-7.54h.04Z"/>
+          <polygon fill="#ff8d40" points="40.49 128.76 87.75 74.94 87.78 84.95 49.83 128.76 40.49 128.76"/>
+          <polygon fill="#ff8d40" points="118.99 110.32 117.95 124.01 116.61 111.69 118.99 110.32"/>
+        </svg>
+        <div class="logo-text">PEAKLINE MEDIA</div>
+      </div>
+      <div class="form-type">Brand Partnership Inquiry</div>
+    </div>
+
+    <div class="form-intro">
+      Connect your brand with Georgia college athletes for authentic, compliant NIL partnerships. Complete this form and we'll schedule a discovery call to discuss your marketing goals.
+    </div>
+
+    <form id="brand-form" action="https://formspree.io/f/xqeeaedj" method="POST">
+      
+      <div class="section-title">Company Information</div>
+      
+      <div class="form-group">
+        <label for="company">Brand/Company Name <span class="required">*</span></label>
+        <input type="text" id="company" name="company" required placeholder="Acme Auto Group">
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="industry">Industry/Vertical <span class="required">*</span></label>
+          <input type="text" id="industry" name="industry" required placeholder="Auto Dealership">
+        </div>
+
+        <div class="form-group">
+          <label for="location">Location (City, State) <span class="required">*</span></label>
+          <input type="text" id="location" name="location" required placeholder="Atlanta, GA">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="website">Website <span class="required">*</span></label>
+        <input type="url" id="website" name="website" required placeholder="https://www.yourcompany.com">
+      </div>
+
+      <div class="section-title">Contact Information</div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="contact_name">Name <span class="required">*</span></label>
+          <input type="text" id="contact_name" name="contact_name" required placeholder="Jane Smith">
+        </div>
+
+        <div class="form-group">
+          <label for="title">Title <span class="required">*</span></label>
+          <input type="text" id="title" name="title" required placeholder="Marketing Director">
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="email">Email <span class="required">*</span></label>
+          <input type="email" id="email" name="email" required placeholder="jane@company.com">
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Phone <span class="required">*</span></label>
+          <input type="tel" id="phone" name="phone" required placeholder="(555) 123-4567">
+        </div>
+      </div>
+
+      <div class="section-title">Brief Context (Optional)</div>
+
+      <div class="form-group">
+        <label for="nil_experience">Have you worked with college athletes before?</label>
+        <select id="nil_experience" name="nil_experience">
+          <option value="">Select...</option>
+          <option value="No">No, this would be our first NIL partnership</option>
+          <option value="Yes">Yes, we've done NIL deals before</option>
+          <option value="Exploring">Just exploring at this stage</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="interest">What sparked your interest in NIL partnerships?</label>
+        <textarea id="interest" name="interest" placeholder="Looking to increase local brand awareness, target college demographic, etc."></textarea>
+      </div>
+
+      <div class="checkbox-group">
+        <label>
+          <input type="checkbox" name="consent" required>
+          <span>I consent to being contacted by Peakline Media to discuss potential athlete partnership opportunities for my brand.</span>
+        </label>
+      </div>
+
+      <div class="button-row">
+        <button type="submit" id="submit-btn">Submit Partnership Inquiry</button>
+        <a href="index.html" class="back-link" aria-label="Back to Home">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M19 12H5M12 19l-7-7 7-7"/>
+          </svg>
+        </a>
+      </div>
+    </form>
+
+    <div class="success-message" id="success-message">
+      <h3>✓ Thank You</h3>
+      <p>We've received your inquiry and will reach out within 1-2 business days to schedule a discovery call.</p>
+      <a href="index.html" class="back-link">Back to Home</a>
+    </div>
+  </div>
+
+  <script>
+    const form = document.getElementById('brand-form');
+    const submitBtn = document.getElementById('submit-btn');
+    const successMessage = document.getElementById('success-message');
+
+    form.addEventListener('submit', function(e) {
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Submitting...';
+    });
+
+    window.addEventListener('load', function() {
+      const urlParams = new URLSearchParams(window.location.search);
+      if (urlParams.has('success') || document.referrer.includes('formspree.io')) {
+        form.style.display = 'none';
+        successMessage.classList.add('show');
+      }
+    });
+  </script>
+</body>
+</html>
