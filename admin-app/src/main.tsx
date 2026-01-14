@@ -7,25 +7,30 @@ import './index.css'
 const auth0Domain = import.meta.env.VITE_AUTH0_DOMAIN
 const auth0ClientId = import.meta.env.VITE_AUTH0_CLIENT_ID
 
-if (!auth0Domain || !auth0ClientId) {
-  throw new Error('Auth0 environment variables not found. Make sure VITE_AUTH0_DOMAIN and VITE_AUTH0_CLIENT_ID are set.')
-}
+// TODO: Enable once Auth0 is configured
+// if (!auth0Domain || !auth0ClientId) {
+//   throw new Error('Auth0 environment variables not found. Make sure VITE_AUTH0_DOMAIN and VITE_AUTH0_CLIENT_ID are set.')
+// }
 
 function mountApp(){
   const el = document.getElementById('root')!
-  createRoot(el).render(
-    <React.StrictMode>
-      <Auth0Provider
-        domain={auth0Domain}
-        clientId={auth0ClientId}
-        authorizationParams={{
-          redirect_uri: window.location.origin,
-        }}
-      >
-        <App />
-      </Auth0Provider>
-    </React.StrictMode>
-  )
+  if (auth0Domain && auth0ClientId) {
+    createRoot(el).render(
+      <React.StrictMode>
+        <Auth0Provider
+          domain={auth0Domain}
+          clientId={auth0ClientId}
+          authorizationParams={{
+            redirect_uri: window.location.origin,
+          }}
+        >
+          <App />
+        </Auth0Provider>
+      </React.StrictMode>
+    )
+  } else {
+    createRoot(el).render(<App />)
+  }
 }
 
 mountApp()
