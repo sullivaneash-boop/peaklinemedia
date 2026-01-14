@@ -8,7 +8,7 @@ const auth0Domain = import.meta.env.VITE_AUTH0_DOMAIN
 const auth0ClientId = import.meta.env.VITE_AUTH0_CLIENT_ID
 
 if (!auth0Domain || !auth0ClientId) {
-  console.error('Auth0 environment variables not found. Make sure VITE_AUTH0_DOMAIN and VITE_AUTH0_CLIENT_ID are set.')
+  throw new Error('Auth0 environment variables not found. Make sure VITE_AUTH0_DOMAIN and VITE_AUTH0_CLIENT_ID are set.')
 }
 
 function mountApp(){

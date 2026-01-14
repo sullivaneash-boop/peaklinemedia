@@ -5,7 +5,7 @@ interface Auth0GuardProps {
   children: React.ReactNode
 }
 
-const Auth0Guard: React.FC<Auth0GuardProps> = ({ children }) => {
+const Auth0Guard: React.FC<Auth0GuardProps> = ({ children }: Auth0GuardProps) => {
   const { isLoading, isAuthenticated, loginWithRedirect } = useAuth0()
 
   if (isLoading) {
