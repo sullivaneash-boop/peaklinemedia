@@ -4,11 +4,11 @@ import { Auth0Provider } from '@auth0/auth0-react'
 import App from './App'
 import './index.css'
 
-const auth0Domain = process.env.AUTH0_DOMAIN
-const auth0ClientId = process.env.AUTH0_CLIENT_ID
+const auth0Domain = import.meta.env.VITE_AUTH0_DOMAIN
+const auth0ClientId = import.meta.env.VITE_AUTH0_CLIENT_ID
 
 if (!auth0Domain || !auth0ClientId) {
-  console.error('Auth0 environment variables not found. Make sure AUTH0_DOMAIN and AUTH0_CLIENT_ID are set in Netlify.')
+  console.error('Auth0 environment variables not found. Make sure VITE_AUTH0_DOMAIN and VITE_AUTH0_CLIENT_ID are set.')
 }
 
 function mountApp(){
