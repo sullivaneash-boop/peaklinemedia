@@ -1,0 +1,13 @@
+{
+  "name": "peakline-media",
+  "version": "1.0.0",
+  "description": "Peakline Media - Georgia's NIL Agency",
+  "scripts": {
+    "dev": "npx serve",
+    "deploy": "wrangler pages deploy ./"
+  },
+  "keywords": ["nil", "athletes", "georgia", "marketing"],
+  "author": "Peakline Media",
+  "license": "UNLICENSED",
+  "private": true
+}
