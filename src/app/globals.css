@@ -1,0 +1,43 @@
+/* Inter font – must precede @import "tailwindcss" to satisfy CSS @import ordering rules */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+@import "tailwindcss";
+
+/*
+ * Global styles for Peakline Media Next.js app.
+ * Uses Tailwind CSS v4 (CSS-first config via @import).
+ */
+
+:root {
+  /* Design tokens */
+  --color-bg: #0d1b2a;
+  --color-zone-default: #1b4f72;
+  --color-zone-hover: #2e86c1;
+  --color-zone-selected: #85c1e9;
+  --color-text-primary: #e8f4fd;
+  --color-text-secondary: #7fb3d3;
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-bg);
+  color: var(--color-text-primary);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Ensure focus outlines are accessible */
+:focus-visible {
+  outline: 2px solid var(--color-zone-hover);
+  outline-offset: 2px;
+}
